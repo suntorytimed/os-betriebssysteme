@@ -1,30 +1,34 @@
 Aufgabe 1:
 
-fork:
-creates a new process (child) by duplicating the calling process (parent).
+fork: Erstellt einen neuen Prozess (Kind bzw. child) durch Duplizierung des aufrufenden Prozesses (Vater bzw. parent).
 
-execl:
-The  exec() family of functions replaces the current process image with a new process image.
+execl: Segmente des aktuellen Prozesses werden mit neuen Segmenten, mit der gleichbleibenden PID, überschrieben.
 
-waitpid:
-All of these system calls are used to wait for state changes in  a  child of  the  calling  process,  and  obtain information about the child whose state has changed. 
+waitpid: Diese Systemaufrufe werden verwendet um auf eine Statusänderung in einem Kindprozess des ausführenden Prozesses zu warten und über diesen Kindprozess Informationen zu erhalten.
 
-clone:
-clone() creates a new process, in a manner similar to fork(2). Unlike  fork(2),  clone()  allows the child process to share parts of its execution context with the calling process, such as the memory space, the table  of file descriptors, and the table of signal handlers.
+clone: Erstellt einen Kindprozess nach dem Vorbild von fork, nur mit dem Unterschied, dass der Kindprozess Teile seines Ausführungskontexts (Speicherbereich, Signal handlers und File descriptors)  mit dem aufrufenden Prozess teilt.
 
-system:
-executes  a  command specified in command by calling /bin/sh -c command, and returns after the command has been completed.
+system: Führt einen Befehl mit Hilfe von /bin/sh -c aus und kehrt nach Beendigung des Kommandos zurück.
 
 Aufgabe 2:
+a) Wir beobachten, dass das gestoppte Programm keine Ausgabe mehr generiert. Durch das CONT-Signal wird die Ausführung wieder fortgesetzt. Dieses ist auch in ps erkennbar.
 
+b) Der Prozess wird beendet.
 
+c) Da der Prozess nicht der kill aufrufenden User-Gruppe gehört wird der Befehl nicht durchgeführt. Erst durch Einsatz von sudo oder den Login als der ausführende Nutzer löst das Problem.
+
+d) Anfangs scheint die Ausführung der Prozesse noch in einer geordneten Reihenfolge zu erfolgen, aber bereits nach kurzer Zeit geraten die Prozesse durcheinander.
 
 Aufgabe 3:
+blockiert -> laufend: hierfür fehlen dem Prozess die Informationen und Daten von Geräten auf die er im blockiert Zustand wartet. Das Betriebssystem wird dem Prozess keinen Prozessor zuweisen, so lange er diese Daten nicht hat.
 
-
+bereit -> blockiert: Im "bereit"-Zustand hat der Prozess bereits alle benötigten Ressourcen und Informationen und wartet nur noch auf einen Prozessor. Bei einem Übergang zu blockiert, würde er diesen nicht erhalten und zusätzlich der Informationsstand geändert. Es würde sich daher Prozess mit einem neuen Informationsstand ergeben und der alte Informationsstand würde nicht verarbeitet werden.
 
 Aufgabe 4:
+create: Es wird in Python ein Thread Objekt erstellt, dass durch den Aufruf von Objekt.start() gestartet wird.
 
+Objekt.join(): Wartet bis der Thread beendet wurde. Ein Job kann mehrmals gejoined werden. Hier wird ebenfalls das Thread Objekt genutzt.
 
 
 Aufgabe 5:
+Wir beobachten, dass sich der Ausgabewert der Funktion mit jeder Ausführung ändert. Dies hängt mit der asynchronen Ausführung der Threads zusammen und damit, dass manche Threads die Schleife bis zum Ende des Programms (bis zum join) noch nicht fertig ausführen konnten.
