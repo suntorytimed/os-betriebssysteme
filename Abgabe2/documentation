@@ -1,3 +1,9 @@
+Betriebssysteme I
+Abgabe 2
+
+Praktikumsgruppe 2  - Gruppennummer 14
+Jennifer Liebel, Jan Opitz, Stefan Weiberg
+
 Aufgabe 1:
 
 fork: Erstellt einen neuen Prozess (Kind bzw. child) durch Duplizierung des aufrufenden Prozesses (Vater bzw. parent).
