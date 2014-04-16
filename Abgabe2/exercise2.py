@@ -1,6 +1,7 @@
 #!/usr/bin/python -Es
-
 import sys
-while true
-	print argv
-	sleep(10)
+import time
+
+while True:
+  print sys.argv[1]
+  time.sleep(10)
