@@ -1,0 +1,30 @@
+Aufgabe 1:
+
+fork:
+creates a new process (child) by duplicating the calling process (parent).
+
+execl:
+The  exec() family of functions replaces the current process image with a new process image.
+
+waitpid:
+All of these system calls are used to wait for state changes in  a  child of  the  calling  process,  and  obtain information about the child whose state has changed. 
+
+clone:
+clone() creates a new process, in a manner similar to fork(2). Unlike  fork(2),  clone()  allows the child process to share parts of its execution context with the calling process, such as the memory space, the table  of file descriptors, and the table of signal handlers.
+
+system:
+executes  a  command specified in command by calling /bin/sh -c command, and returns after the command has been completed.
+
+Aufgabe 2:
+
+
+
+Aufgabe 3:
+
+
+
+Aufgabe 4:
+
+
+
+Aufgabe 5:
