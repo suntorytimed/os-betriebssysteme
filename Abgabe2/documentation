@@ -21,14 +21,14 @@ a) Wir beobachten, dass das gestoppte Programm keine Ausgabe mehr generiert. Dur
 
 b) Der Prozess wird beendet.
 
-c) Da der Prozess nicht der kill aufrufenden User-Gruppe gehört wird der Befehl nicht durchgeführt. Erst durch Einsatz von sudo oder den Login als der ausführende Nutzer löst das Problem.
+c) Da der Prozess nicht der kill aufrufenden User-Gruppe gehört wird der Befehl nicht durchgeführt. Erst der Einsatz von sudo oder den Login als der ausführende Nutzer löst das Problem.
 
 d) Anfangs scheint die Ausführung der Prozesse noch in einer geordneten Reihenfolge zu erfolgen, aber bereits nach kurzer Zeit geraten die Prozesse durcheinander.
 
 Aufgabe 3:
 blockiert -> laufend: hierfür fehlen dem Prozess die Informationen und Daten von Geräten auf die er im blockiert Zustand wartet. Das Betriebssystem wird dem Prozess keinen Prozessor zuweisen, so lange er diese Daten nicht hat.
 
-bereit -> blockiert: Im "bereit"-Zustand hat der Prozess bereits alle benötigten Ressourcen und Informationen und wartet nur noch auf einen Prozessor. Bei einem Übergang zu blockiert, würde er diesen nicht erhalten und zusätzlich der Informationsstand geändert. Es würde sich daher Prozess mit einem neuen Informationsstand ergeben und der alte Informationsstand würde nicht verarbeitet werden.
+bereit -> blockiert: Im "bereit"-Zustand hat der Prozess bereits alle benötigten Ressourcen und Informationen und wartet nur noch auf einen Prozessor. Bei einem Übergang zu blockiert, würde er diesen nicht erhalten und zusätzlich der Informationsstand geändert. Es würde sich daher ein Prozess mit einem neuen Informationsstand ergeben und der alte Informationsstand würde nicht verarbeitet werden.
 
 Aufgabe 4:
 create: Es wird in Python ein Thread Objekt erstellt, dass durch den Aufruf von Objekt.start() gestartet wird.
