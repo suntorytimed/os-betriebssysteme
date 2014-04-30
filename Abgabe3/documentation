@@ -22,3 +22,9 @@ g. Die Internet Service Routine wird durchgeführt.
 h. Wiederherstellung der von der Software der ISR gesicherten Register
 i. ISR wird durch einen Rücksprung beendet (Alten Zählerstand und evtl. Statusregister wiederherstellen => "back to the roots")
 j. Der Task kann weiter arbeiten
+
+2.
+Mit Hilfe des Interruptvektors des Interrupt Requests
+
+3.
+Durch Maskenbits in Interruptmaskenregistern oder durch eine globale Interruptstuerung über ein CPU-Statusbit.
