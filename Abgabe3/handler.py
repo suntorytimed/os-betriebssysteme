@@ -1,3 +1,4 @@
+#!/usr/bin/python -Es
 import signal
 import time
 
