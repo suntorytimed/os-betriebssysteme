@@ -15,7 +15,7 @@ def plus():
 
 threads = []
   
-for i in range(5):
+for i in range(100):
   thread = Thread(target = minus)
   threads += [thread]
   thread.start()
