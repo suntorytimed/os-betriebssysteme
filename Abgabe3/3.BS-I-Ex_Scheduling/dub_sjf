@@ -1,0 +1,149 @@
+Anzahl tasks:  3
+PID | Sta | End | CPU | I/O | Status | Verhalten
+  0 |   0 |  -1 |   0 |   0 |  Ready | [2, 1, 7, -1]
+  1 |   0 |  -1 |   0 |   0 |  Ready | [1, 4, 4, -1]
+  2 |   0 |  -1 |   0 |   0 |  Ready | [3, 1, 2, -1]
+Runqueue: []   Blocked: []
+
+Zeit:    0, Es laeuft PID:   0 [  0]
+PID | Sta | End | CPU | I/O | Status | Verhalten
+  0 |   0 |  -1 |   1 |   0 | Active | [1, 1, 7, -1]
+  1 |   0 |  -1 |   0 |   0 |  Ready | [1, 4, 4, -1]
+  2 |   0 |  -1 |   0 |   0 |  Ready | [3, 1, 2, -1]
+Runqueue: [0, 1, 2]   Blocked: []
+
+Zeit:    1, Es laeuft PID:   1 [  0]
+PID | Sta | End | CPU | I/O | Status | Verhalten
+  0 |   0 |  -1 |   1 |   0 |  Ready | [1, 1, 7, -1]
+  1 |   0 |  -1 |   1 |   0 | Blockd | [4, 4, -1]
+  2 |   0 |  -1 |   0 |   0 |  Ready | [3, 1, 2, -1]
+Runqueue: [0, 2]   Blocked: [1]
+
+Zeit:    2, Es laeuft PID:   2 [  0]
+PID | Sta | End | CPU | I/O | Status | Verhalten
+  0 |   0 |  -1 |   1 |   0 |  Ready | [1, 1, 7, -1]
+  1 |   0 |  -1 |   1 |   1 | Blockd | [3, 4, -1]
+  2 |   0 |  -1 |   1 |   0 | Active | [2, 1, 2, -1]
+Runqueue: [0, 2]   Blocked: [1]
+
+Zeit:    3, Es laeuft PID:   0 [  1]
+PID | Sta | End | CPU | I/O | Status | Verhalten
+  0 |   0 |  -1 |   2 |   0 | Blockd | [1, 7, -1]
+  1 |   0 |  -1 |   1 |   2 | Blockd | [2, 4, -1]
+  2 |   0 |  -1 |   1 |   0 |  Ready | [2, 1, 2, -1]
+Runqueue: [2]   Blocked: [1, 0]
+
+Zeit:    4, Es laeuft PID:   2 [  1]
+PID | Sta | End | CPU | I/O | Status | Verhalten
+  0 |   0 |  -1 |   2 |   1 |  Ready | [7, -1]
+  1 |   0 |  -1 |   1 |   3 | Blockd | [1, 4, -1]
+  2 |   0 |  -1 |   2 |   0 | Active | [1, 1, 2, -1]
+Runqueue: [2, 0]   Blocked: [1]
+
+Zeit:    5, Es laeuft PID:   2 [  2]
+PID | Sta | End | CPU | I/O | Status | Verhalten
+  0 |   0 |  -1 |   2 |   1 |  Ready | [7, -1]
+  1 |   0 |  -1 |   1 |   4 |  Ready | [4, -1]
+  2 |   0 |  -1 |   3 |   0 | Blockd | [1, 2, -1]
+Runqueue: [0, 1]   Blocked: [2]
+
+Zeit:    6, Es laeuft PID:   1 [  1]
+PID | Sta | End | CPU | I/O | Status | Verhalten
+  0 |   0 |  -1 |   2 |   1 |  Ready | [7, -1]
+  1 |   0 |  -1 |   2 |   4 | Active | [3, -1]
+  2 |   0 |  -1 |   3 |   1 |  Ready | [2, -1]
+Runqueue: [0, 1, 2]   Blocked: []
+
+Zeit:    7, Es laeuft PID:   0 [  2]
+PID | Sta | End | CPU | I/O | Status | Verhalten
+  0 |   0 |  -1 |   3 |   1 | Active | [6, -1]
+  1 |   0 |  -1 |   2 |   4 |  Ready | [3, -1]
+  2 |   0 |  -1 |   3 |   1 |  Ready | [2, -1]
+Runqueue: [0, 1, 2]   Blocked: []
+
+Zeit:    8, Es laeuft PID:   1 [  2]
+PID | Sta | End | CPU | I/O | Status | Verhalten
+  0 |   0 |  -1 |   3 |   1 |  Ready | [6, -1]
+  1 |   0 |  -1 |   3 |   4 | Active | [2, -1]
+  2 |   0 |  -1 |   3 |   1 |  Ready | [2, -1]
+Runqueue: [0, 1, 2]   Blocked: []
+
+Zeit:    9, Es laeuft PID:   0 [  3]
+PID | Sta | End | CPU | I/O | Status | Verhalten
+  0 |   0 |  -1 |   4 |   1 | Active | [5, -1]
+  1 |   0 |  -1 |   3 |   4 |  Ready | [2, -1]
+  2 |   0 |  -1 |   3 |   1 |  Ready | [2, -1]
+Runqueue: [0, 1, 2]   Blocked: []
+
+Zeit:   10, Es laeuft PID:   1 [  3]
+PID | Sta | End | CPU | I/O | Status | Verhalten
+  0 |   0 |  -1 |   4 |   1 |  Ready | [5, -1]
+  1 |   0 |  -1 |   4 |   4 | Active | [1, -1]
+  2 |   0 |  -1 |   3 |   1 |  Ready | [2, -1]
+Runqueue: [0, 1, 2]   Blocked: []
+
+Zeit:   11, Es laeuft PID:   2 [  3]
+PID | Sta | End | CPU | I/O | Status | Verhalten
+  0 |   0 |  -1 |   4 |   1 |  Ready | [5, -1]
+  1 |   0 |  -1 |   4 |   4 |  Ready | [1, -1]
+  2 |   0 |  -1 |   4 |   1 | Active | [1, -1]
+Runqueue: [0, 1, 2]   Blocked: []
+
+Zeit:   12, Es laeuft PID:   0 [  4]
+PID | Sta | End | CPU | I/O | Status | Verhalten
+  0 |   0 |  -1 |   5 |   1 | Active | [4, -1]
+  1 |   0 |  -1 |   4 |   4 |  Ready | [1, -1]
+  2 |   0 |  -1 |   4 |   1 |  Ready | [1, -1]
+Runqueue: [0, 1, 2]   Blocked: []
+
+Zeit:   13, Es laeuft PID:   1 [  4]
+PID | Sta | End | CPU | I/O | Status | Verhalten
+  0 |   0 |  -1 |   5 |   1 |  Ready | [4, -1]
+  1 |   0 |  13 |   5 |   4 |   Done | [-1]
+  2 |   0 |  -1 |   4 |   1 |  Ready | [1, -1]
+Runqueue: [0, 2]   Blocked: []
+
+Zeit:   14, Es laeuft PID:   2 [  4]
+PID | Sta | End | CPU | I/O | Status | Verhalten
+  0 |   0 |  -1 |   5 |   1 |  Ready | [4, -1]
+  1 |   0 |  13 |   5 |   4 |   Done | [-1]
+  2 |   0 |  14 |   5 |   1 |   Done | [-1]
+Runqueue: [0]   Blocked: []
+
+Zeit:   15, Es laeuft PID:   0 [  5]
+PID | Sta | End | CPU | I/O | Status | Verhalten
+  0 |   0 |  -1 |   6 |   1 | Active | [3, -1]
+  1 |   0 |  13 |   5 |   4 |   Done | [-1]
+  2 |   0 |  14 |   5 |   1 |   Done | [-1]
+Runqueue: [0]   Blocked: []
+
+Zeit:   16, Es laeuft PID:   0 [  6]
+PID | Sta | End | CPU | I/O | Status | Verhalten
+  0 |   0 |  -1 |   7 |   1 | Active | [2, -1]
+  1 |   0 |  13 |   5 |   4 |   Done | [-1]
+  2 |   0 |  14 |   5 |   1 |   Done | [-1]
+Runqueue: [0]   Blocked: []
+
+Zeit:   17, Es laeuft PID:   0 [  7]
+PID | Sta | End | CPU | I/O | Status | Verhalten
+  0 |   0 |  -1 |   8 |   1 | Active | [1, -1]
+  1 |   0 |  13 |   5 |   4 |   Done | [-1]
+  2 |   0 |  14 |   5 |   1 |   Done | [-1]
+Runqueue: [0]   Blocked: []
+
+Zeit:   18, Es laeuft PID:   0 [  8]
+PID | Sta | End | CPU | I/O | Status | Verhalten
+  0 |   0 |  18 |   9 |   1 |   Done | [-1]
+  1 |   0 |  13 |   5 |   4 |   Done | [-1]
+  2 |   0 |  14 |   5 |   1 |   Done | [-1]
+Runqueue: []   Blocked: []
+
+
+Endzeit: 19
+Trace: [0, 1, 2, 0, 2, 2, 1, 0, 1, 0, 1, 2, 0, 1, 2, 0, 0, 0, 0, 'END']
+Laufzeiten:
+PID Ankunft Rechenz Startze Endzeit TurnAro  Quotient
+-----------------------------------------------------
+  0       0       9       0      19      19    2.1111
+  1       0       5       1      14      14    2.8000
+  2       0       5       2      15      15    3.0000

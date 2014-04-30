@@ -35,3 +35,26 @@ Aufgabe 3:
 a) Trägt einen Prozess in die Prozessliste ein. Dabei kann der Parameter für den Startzeitpunkt auch in der Zukunft liegen. Der Prozess beginnt mit einer I/O-Phase, wenn der Parameter behavior 0 ist.
 b) Lässt den aktuellen Prozess eine Zeiteinheit lang rechnen. Wenn der Prozess zum ersten Mal ausgeführt wird, soll die Zeit gemerkt werden. Die verbleibende Rechenzeit des Prozesses wird entsprechend verringert.
 c) Sucht die blockierten Prozesse aus der Liste blocked heraus und bearbeitet diese nur, wenn er bereits im System ist und nicht gerade erst in blocked geschoben wurde. Wenn behavior vom Prozess gleich 0 wird die aktuelle I/O-Phase abgeschlossen.
+
+3.
+FCFS:
+Endzeit: 19
+Trace: [0, 0, 1, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 'END']
+Laufzeiten:
+PID Ankunft Rechenz Startze Endzeit TurnAro  Quotient
+-----------------------------------------------------
+  0       0       9       0      13      13    1.4444
+  1       0       5       2      17      17    3.4000
+  2       0       5       3      19      19    3.8000
+
+SJF:
+Endzeit: 19
+Trace: [0, 1, 2, 0, 2, 2, 1, 0, 1, 0, 1, 2, 0, 1, 2, 0, 0, 0, 0, 'END']
+Laufzeiten:
+PID Ankunft Rechenz Startze Endzeit TurnAro  Quotient
+-----------------------------------------------------
+  0       0       9       0      19      19    2.1111
+  1       0       5       1      14      14    2.8000
+  2       0       5       2      15      15    3.0000
+
+PID 2 und 1 profitieren durch eine schnellere Abfertigung. PID 0 hingegen ist deutlich später fertig als bei FCFS.
