@@ -28,3 +28,10 @@ Mit Hilfe des Interruptvektors des Interrupt Requests
 
 3.
 Durch Maskenbits in Interruptmaskenregistern oder durch eine globale Interruptstuerung über ein CPU-Statusbit.
+
+Aufgabe 3:
+
+2.
+a) Trägt einen Prozess in die Prozessliste ein. Dabei kann der Parameter für den Startzeitpunkt auch in der Zukunft liegen. Der Prozess beginnt mit einer I/O-Phase, wenn der Parameter behavior 0 ist.
+b) Lässt den aktuellen Prozess eine Zeiteinheit lang rechnen. Wenn der Prozess zum ersten Mal ausgeführt wird, soll die Zeit gemerkt werden. Die verbleibende Rechenzeit des Prozesses wird entsprechend verringert.
+c) Sucht die blockierten Prozesse aus der Liste blocked heraus und bearbeitet diese nur, wenn er bereits im System ist und nicht gerade erst in blocked geschoben wurde. Wenn behavior vom Prozess gleich 0 wird die aktuelle I/O-Phase abgeschlossen.
