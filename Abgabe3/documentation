@@ -9,3 +9,16 @@ Ja, z. B. durch eine ssh-Verbindung. Solange man einen Fernzugriff auf den PC ha
 4.
 a) Mit Hilfe von signal.SIG_IGN kann man Signale ignorieren.
 b) signal.SIG_DFL führt das Standardverhalten des übergebenen Signals aus.
+
+Aufgabe 2:
+1. 
+a. Interruptanforderungen werden nach Ablauf der aktuell laufenden Instruktion akzeptiert
+b. Der Interruptvektor des Interrupt Requests mit der höchsten Priorität wird von der Hardware bestimmt
+c. CPU akzeptiert die Unterbrechungsanforderung (Interruptzyklus durchführen, Interrupteingang maskieren -> Stackoverflow verhindern)
+d. Befehlszähler-Stand und evtl. Statusregister werden im Zyklus auf dem Stack gesichert.
+e. Der neue Stand wird berechnet.
+f. Die Software der Interrupt Service Routine startet und sicher die Inhalte der Register die es selbst verwendet.
+g. Die Internet Service Routine wird durchgeführt.
+h. Wiederherstellung der von der Software der ISR gesicherten Register
+i. ISR wird durch einen Rücksprung beendet (Alten Zählerstand und evtl. Statusregister wiederherstellen => "back to the roots")
+j. Der Task kann weiter arbeiten
