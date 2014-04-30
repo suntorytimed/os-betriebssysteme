@@ -1,0 +1,10 @@
+Aufgabe 1:
+1.
+a) Das Signal wird ganz normal vom Handler verarbeitet. Unabhängig von der Häufigkeit der Signale.
+b) Das Signal wird per Standard verarbeitet und die Verarbeitungsmethode nicht durch den Handler überschrieben.
+2.
+
+3.
+Ja, z. B. durch eine ssh-Verbindung. Solange man einen Fernzugriff auf den PC hat kann man das Signal auch absenden. Dies erfolgt dann allerdings lokal auf der Maschine. Ansonsten kann man eine Signalabsetzung durch ein Script Inject durchführen. Beide Methoden setzen jedoch auf eine lokale Ausführung der Signale.
+4.
+a) Mit hilfe von signal.SIG_IGN kann man Signale ignorieren. Möchte man alle Signale ignorieren, kann man dies durch einen Asterisk erreichen (signal.SIG_IGN(SIG*
