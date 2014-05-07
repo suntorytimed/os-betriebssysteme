@@ -109,8 +109,6 @@ def schedule():
     choice = runqueue[0]
     shortest_job_time = 0
     for processes in runqueue:
-      jobtime = 0
-      
       jobtime = get_head_behavior(processes)
       if shortest_job_time == 0:
         shortest_job_time = jobtime
