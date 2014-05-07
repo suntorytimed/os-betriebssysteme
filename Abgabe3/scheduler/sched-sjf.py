@@ -107,8 +107,16 @@ def schedule():
   elif (runqueue != []):
     # durch alle bereiten Prozesse laufen und den kürzesten auswählen
     choice = runqueue[0]
+    shortest_job_time = 0
     for processes in runqueue:
-      if get_cputime(processes) < get_cputime(choice):
+      jobtime = 0
+      
+      jobtime = get_head_behavior(processes)
+      if shortest_job_time == 0:
+        shortest_job_time = jobtime
+        choice = processes
+      elif (jobtime < shortest_job_time):
+        shortest_job_time = jobtime
         choice = processes
   else:
   # falls alle blockiert: idlen!
