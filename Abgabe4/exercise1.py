@@ -52,9 +52,6 @@ class student:
 
             time.sleep(1)
 
-def output(string):
-    print(string)
-
 
 def main():
     global books
