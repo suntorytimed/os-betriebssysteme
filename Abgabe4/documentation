@@ -1,0 +1,12 @@
+1. 
+a) Die Buecher sind die Synchronisationsobjekte damit diese nicht mehrfach vergriffen werden und fehlende Buecher bei den Studenten sinnvoll ergaenzt werden. Buecher werden dadurch nicht wild verteilt.
+b) Mit der Anzahl der Buecher (wie viele Exemplare es gibt)
+
+2.
+Buecher werden als Semaphore mit dem definierten Wert erstellt. Der Thread greift ueber ein acquire auf diese Semaphore zu. Nach einem Lesevorgang werden die Buecher wieder mit release freigegeben.
+
+4.
+Wir haben drei verschiedene Implementierungen getestet (mit und ohne sleep nach dem release Aufruf und mit der Textausgabe ausserhalb):
+ohne: Nur Student 1 und 2 werden bedient, diese dadurch gleichmaessig und auch dauerhaft.
+mit: Student 1 und 2 werden als erstes fertig, danach jedoch gleichmaessig und dauerhaft ueber alle verteilt.
+ausserhalb: siehe "mit", nur tritt die Gleichmaessigkeit erst nach einer laengeren Laufphase ein.
