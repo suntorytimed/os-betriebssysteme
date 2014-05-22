@@ -6,40 +6,59 @@
 """
 
 import socket
-import sys
+
+MUL = ('mul', 'multiply', '*')
+SUB = ('sub', 'subtract', '-')
+DIV = ('div', 'divide', '/')
+ADD = ('add', '+')
 
 
-def standard_package(size):
+def standard_package(number):
     package = bytearray()
-    package.append(int_input())
-    package.append(int_input())
+    package.append(number)
+
+
+def input_operation():
+    global ADD
+    global SUB
+    global MUL
+    global DIV
+    global package_operation
+
+    while(True):
+        operation = eval(input('Which operation?'))
+        package_operation = bytearray()
+        if operation in ADD:
+            package_operation.append('+')
+            break
+        elif operation in SUB:
+            package_operation.append('-')
+            break
+        elif operation in MUL:
+            package_operation.append('*')
+            break
+        elif operation in DIV:
+            package_operation.append('/')
+            break
+        else:
+            print('Invalid input, try again!')
+
+    return package_operation
 
 
 def main(argv):
-    IP = "127.0.0.1" #enter server IP
-    PORT = 5005
-    PACKAGE = standard_package(1400)
+    IP = eval(input('Enter the server IP: '))
+    PORT = eval(input('Enter the connection port: '))
 
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.connect((IP, PORT))
-    #i = 0
-    #while i < number_packages:
-	#if split:
-	    #if i%n == 0:
-		#time.sleep(k)
-	#s.send(PACKAGE)
-	#if first_time:
-	    #start_time = time.time()
-	    #first_time = False
-	#else:
-	    #last_time = time.time()
-	#i+=1
+
+    while(True):
+        input_operation()
+        package_1st = standard_package(int(eval(input('Enter the 1st operand: '))))
+        package_2nd = standard_package(int(eval(input('Enter the 2nd operand: '))))
+
     s.close()
-
-        #time_diff = last_time-start_time
-        #throughput = (number_packages * 11.2) / time_diff
-        #print "Senderate = %f KBit/s" % throughput
-
 
 if __name__ == "__main__":
     main()

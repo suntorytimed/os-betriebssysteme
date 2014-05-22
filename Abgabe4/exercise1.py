@@ -43,7 +43,7 @@ class student:
             self.could_read += 1
             counter += 1
 
-            if counter == 20:
+            if counter == 5:
                 print(("Student " + self.thread.getName() + " studies for the %i. time." % self.could_read))
                 counter = 0
 
