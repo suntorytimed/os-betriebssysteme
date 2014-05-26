@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python -Es
 # -*- coding: utf-8 -*-
 """
 
@@ -8,9 +8,9 @@
 import socket
 
 MUL = ('mul', 'multiply', '*')
-SUB = ('sub', 'subtract', '-')
-DIV = ('div', 'divide', '/')
-ADD = ('add', '+')
+ADD_STRING = ('string', 'merge', '#')
+ADD_INT = ('add', '+')
+QUIT = ('quit', 'q', 'exit', 'stop')
 
 
 def standard_package(number):
@@ -19,27 +19,25 @@ def standard_package(number):
 
 
 def input_operation():
-    global ADD
-    global SUB
+    global ADD_INT
     global MUL
-    global DIV
+    global ADD_STRING
     global package_operation
 
     while(True):
-        operation = eval(input('Which operation?'))
+        operation = eval(input('Which operation? (*/+/#/q)'))
         package_operation = bytearray()
-        if operation in ADD:
+        if operation in ADD_INT:
             package_operation.append('+')
-            break
-        elif operation in SUB:
-            package_operation.append('-')
             break
         elif operation in MUL:
             package_operation.append('*')
             break
-        elif operation in DIV:
-            package_operation.append('/')
+        elif operation in ADD_STRING:
+            package_operation.append('#')
             break
+        elif operation in QUIT:
+            return 0
         else:
             print('Invalid input, try again!')
 
@@ -54,10 +52,16 @@ def main(argv):
     s.connect((IP, PORT))
 
     while(True):
-        input_operation()
-        package_1st = standard_package(int(eval(input('Enter the 1st operand: '))))
-        package_2nd = standard_package(int(eval(input('Enter the 2nd operand: '))))
-
+        package_opc = input_operation()
+        if package_opc == 0:
+            break
+        package_1st = standard_package(int(eval(input('1st operand: '))))
+        package_2nd = standard_package(int(eval(input('2nd operand: '))))
+        s.send(package_opc)
+        s.send(package_1st)
+        s.send(package_2nd)
+        solution = s.recv()
+        print(('The solution is: %i', solution))
     s.close()
 
 if __name__ == "__main__":
