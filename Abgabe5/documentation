@@ -1,0 +1,4 @@
+Aufgabe 2:
+1. Die Bytes werden nicht verarbeitet
+2. Durch Aenderung der Buffersize
+3. Die sinnvollste maximale Buffersize betraegt 4096. Darueber wird die Performance nicht weiter ansteigen, sondern eher sogar schlechter werden
