@@ -31,7 +31,7 @@ def input_operation():
             break
         elif operation in ADD_STRING:
             package_operation.append(2)
-            break
+            return 1
         elif operation in QUIT:
             return 0
         else:
@@ -50,24 +50,25 @@ def main():
 
     while(True):
         package_opc = input_operation()
-        package = bytes(package_opc)
-        print (package)
-
         if package_opc == 0:
             break
-        elif package_opc[0] == 2:
-            package += (input('1st operand: ')).encode('utf-8')
-            package += (input('2nd operand: ')).encode('utf-8')
+        elif package_opc == 1:
+            package_1st = input('1st operand: ')
+            package_2nd = input('1st operand: ')
+            s.send(package_opc)
+            s.sendall(package_1st)
+            s.sendall(package_2nd)
         else:
-            package += (struct.pack('!i', int(input('1st operand: '))))
-            package += (struct.pack('!i', int(input('2nd operand: '))))
-
-        s.sendall(package)
+            package_1st = struct.pack('!i', int(input('1st operand: ')))
+            package_2nd = struct.pack('!i', int(input('2nd operand: ')))
+            s.send(package_opc)
+            s.send(package_1st)
+            s.send(package_2nd)
 
         solution = s.recv(BUFFER_SIZE)
 
-        if package_opc[0] == 2:
-            print('The solution is: ', solution.decode('utf-8'))
+        if package_opc == 1:
+            print('The solution is: ', solution)
         else:
             print('The solution is: ', struct.unpack('!i', solution)[0])
 

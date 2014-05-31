@@ -41,9 +41,7 @@ class client:
                 elif data[0] == 1:
                     self.conn.send(struct.pack('!i', first_int[0] * second_int[0]))
             else:
-                print(data[1:])
-                print(data[0:])
-                self.conn.sendall(data[0:])
+                self.conn.send(data[1:])
 
 
 def main():
@@ -54,7 +52,7 @@ def main():
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.setsockopt(socket.SOL_SOCKET, socket.SO_LINGER, struct.pack('ii', 1, 0))
     s.bind((IP, PORT))
-    s.listen(5)
+    s.listen(1)
     while True:
         conn, addr = s.accept()
         if os.fork():
