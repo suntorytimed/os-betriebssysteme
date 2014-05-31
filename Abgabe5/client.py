@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 
-@author: Jennifer Liebel, Stefan Weiberg, Jan Opitz
+@author: Stefan Weiberg, Jan Opitz, Jennifer Liebel
 """
 
 import socket
@@ -43,7 +43,7 @@ def input_operation():
 def main():
     IP = input('Enter the server IP: ')
     PORT = eval(input('Enter the connection port: '))
-    BUFFER_SIZE = 1400
+    BUFFER_SIZE = 4096
 
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.connect((IP, PORT))

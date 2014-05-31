@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 
-@author: Jennifer Liebel, Stefan Weiberg, Jan Opitz
+@author: Stefan Weiberg, Jan Opitz, Jennifer Liebel
 """
 
 import socket
@@ -12,7 +12,7 @@ import struct
 
 IP = ''  # listens to every sending IP, for security enter client IP
 PORT = 50050
-BUFFER_SIZE = 1400
+BUFFER_SIZE = 4096
 
 
 class client:
